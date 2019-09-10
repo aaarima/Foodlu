@@ -1,8 +1,9 @@
 import React from 'react'
+import NavBar from "../nav_bar/NavBar";
 
 const Home = props => (
   <div>
-    home
+    <NavBar />
   </div>
 );
 

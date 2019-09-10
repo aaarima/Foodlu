@@ -2,11 +2,11 @@ import React from 'react';
 
 const NavBar = props => (
   <div className={"nav-bar"}>
-    <div className="nav-bar-left">
-      {props.left}
+    <div className="left">
+      {props.left.map((item, idx) => <div className="item" key={idx}>{item}</div>)}
     </div>
-    <div className={"nav-bar-right"}>
-      {props.right}
+    <div className={"right"}>
+      {props.right.map((item, idx) => <div className="item" key={idx}>{item}</div>)}
     </div>
   </div>
 );

@@ -4,8 +4,14 @@ class User < ApplicationRecord
   validates :email, :session_token, presence: true, uniqueness: true
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
+  validates :first_name, :last_name, presence: true
+  validate :is_number?
 
   after_initialize :ensure_session_token
+
+  def is_number?
+    true if Integer(self.age) rescue false;
+  end
 
   def password=(password)
     @password = password

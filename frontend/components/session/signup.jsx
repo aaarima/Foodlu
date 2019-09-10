@@ -1,4 +1,5 @@
 import React from "react";
+import SignInContainer from './signin_container'
 
 export default class SignUp extends React.Component {
   constructor(props) {
@@ -6,7 +7,6 @@ export default class SignUp extends React.Component {
     this.state = {
       username: "",
       password: "",
-      active: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -24,29 +24,28 @@ export default class SignUp extends React.Component {
     this.props.createUser(this.state).then(this.props.history.push("/"))
   }
 
-  handleClick(e) {
-    e.preventDefault();
-    this.setState({
-      active: !this.state.active
-    })
-  }
-
   render() {
     return (
       <div>
-        <button className={"nav-button"} onClick={this.handleClick}>Sign Up!</button>
-        <div className={this.state.active ? "modal" : "hidden"}>
-          <form className={this.state.active ? "sign-up" : "hidden"}>
-            <ul>
-              { this.props.errors.map((error, idx) => <li key={idx}>{error}</li>) }
-            </ul>
-            <label>EMAIL</label>
-            <input type="text" value={ this.state.username } onChange={ this.handleInput("username") }/>
-            <label>PASSWORD</label>
-            <input type="text" value={ this.state.password } onChange={ this.handleInput("password") }/>
-            <button onClick={ this.handleSubmit }>Sign Up</button>
-          </form>
+        <div className="bar">
+          <div className="left">
+            <p>Godzillu</p>
+          </div>
+          <div className="right">
+            <SignInContainer/>
+          </div>
         </div>
+        <form className="sign-up">
+          <h1>Create an Account</h1>
+          <ul>
+            { this.props.errors.map((error, idx) => <li key={idx}>{error}</li>) }
+          </ul>
+          <label>EMAIL</label>
+          <input type="text" value={ this.state.username } onChange={ this.handleInput("username") }/>
+          <label>PASSWORD</label>
+          <input type="text" value={ this.state.password } onChange={ this.handleInput("password") }/>
+          <button onClick={ this.handleSubmit }>Sign Up</button>
+        </form>
       </div>
     )
   }

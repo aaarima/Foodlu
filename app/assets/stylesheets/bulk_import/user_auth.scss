@@ -1,11 +1,38 @@
 .sign-in {
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 12px;
+  width: 420px;
+  height: 600px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in .input {
+  width: 308px;
+  height: 48px;
+  padding-left: 11px;
+  font-size: 16px;
+}
+.sign-in .input.active {
+  background-color: white;
+  border: solid black 1px;
+}
+
+.sign-in .h3 {
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+.sign-in .button {
+  width: 308px;
+  height: 56px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  vertical-align: center;
 }
 
 .sign-out {
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 12px;
+  width: 420px;
+  height: 600px;
 }
