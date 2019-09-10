@@ -1,0 +1,31 @@
+.nav-bar {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-family: Futura;
+}
+
+.modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.nav-bar-right {
+  display: flex;
+  align-content: space-between;
+}
+
+.nav-bar-left {
+  display: flex;
+  align-content: space-between;
+}
+
+.nav-bar-item {
+  padding: 31px 0;
+}
