@@ -4,7 +4,16 @@ import React from 'react'
 import ReactDom from 'react-dom'
 
 document.addEventListener("DOMContentLoaded", () => {
-  let store = configureStore();
+  let store;
+  if (window.currentUser) {
+    const preloadedState = {
+      session: window.currentUser
+    };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
   let root = document.getElementById("root");
 
   window.getState = store.getState;

@@ -1,20 +1,33 @@
 import React from "react";
-import SignInContainer from './signin_container'
+import { Link } from 'react-router-dom'
 
 export default class SignUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      email: "",
       password: "",
+      age: "",
+      gender: "select",
+      first_name: "",
+      last_name: "",
+      middle_initial: "",
+      active: {
+        email: false,
+        password: false,
+        age: false,
+        gender: false,
+        first_name: false,
+        last_name: false,
+        middle_initial: false,
+      }
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClick = this.handleClick.bind(this);
   }
 
   handleInput(str) {
     return (e) => {
-      this.setState({[str]: e.target.value})
+      this.setState({ [str]: e.target.value })
 
     }
   }
@@ -24,28 +37,233 @@ export default class SignUp extends React.Component {
     this.props.createUser(this.state).then(this.props.history.push("/"))
   }
 
+  validEmail() {
+    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email);
+  }
+
+  validFirstName() {
+    return this.state.first_name.length > 0;
+  }
+
+  validLastName() {
+    return this.state.last_name.length > 0;
+  }
+
+  nameErrorMessage() {
+    let errorMessage = [];
+    if(!this.validFirstName()) {
+      errorMessage.push("Invalid First Name")
+    }
+    if (!this.validLastName()) {
+      errorMessage.push("Invalid Last Name")
+    }
+    return errorMessage.join(", ")
+  }
+
+  validGender() {
+    return this.state.gender !== "select";
+  }
+
+  validAge() {
+    return this.state.age.match(/^-{0,1}\d+$/);
+  }
+
+  ageGenderErrorMessage() {
+    let error = [];
+    if (!this.validGender()) {
+      error.push("Please Select an Option");
+    }
+    if (!this.validAge()) {
+      error.push("Please Enter a Valid Age");
+    }
+    return error.join(', ')
+  }
+
+  validPassword() {
+    return this.state.password.length > 5;
+  }
+
+  allValid() {
+    return this.validAge() && this.validEmail() && this.validFirstName() && this.validLastName()
+      && this.validGender() && this.validPassword();
+  }
+
+  emailClass() {
+    if (!this.state.active.email || this.validEmail()) {
+      return "input"
+    } else {
+      return "input invalid-input"
+    }
+  }
+
+  passwordClass() {
+    if (!this.state.active.password || this.validPassword()) {
+      return "input"
+    } else {
+      return "input invalid-input"
+    }
+  }
+
+  firstNameClass() {
+    if (!this.state.active.first_name || this.validFirstName()) {
+      return "input"
+    } else {
+      return "input invalid-input"
+    }
+  }
+
+  lastNameClass() {
+    if (!this.state.active.last_name || this.validLastName()) {
+      return "input"
+    } else {
+      return "input invalid-input"
+    }
+  }
+
+  ageClass() {
+    if (!this.state.active.age || this.validAge()) {
+      return "input"
+    } else {
+      return "input invalid-input"
+    }
+  }
+
+  genderClass() {
+    if (!this.state.active.gender || this.validGender()) {
+      return "input"
+    } else {
+      return "input invalid-input"
+    }
+  }
+
+  setActive(field) {
+    return e => {
+      this.setState({
+        active: {
+          [field]: true
+        }
+      });
+    }
+  }
   render() {
     return (
       <div>
         <div className="bar">
           <div className="left">
-            <p>Godzillu</p>
+            <div className="item">
+              <p className="logo">foodlu</p>
+            </div>
           </div>
           <div className="right">
-            <SignInContainer/>
+            <div className="item" onClick={e => {this.props.toggleLoginPage(); this.props.toggleModal()}}>
+              <Link to={"/welcome"}>LOG IN</Link>
+            </div>
           </div>
         </div>
-        <form className="sign-up">
-          <h1>Create an Account</h1>
-          <ul>
-            { this.props.errors.map((error, idx) => <li key={idx}>{error}</li>) }
-          </ul>
-          <label>EMAIL</label>
-          <input type="text" value={ this.state.username } onChange={ this.handleInput("username") }/>
-          <label>PASSWORD</label>
-          <input type="text" value={ this.state.password } onChange={ this.handleInput("password") }/>
-          <button onClick={ this.handleSubmit }>Sign Up</button>
-        </form>
+        <div className="background">
+          <div className={"form-container"}>
+            <h1>Create Your Account</h1>
+            <form className={"sign-up"} onSubmit={e => e.preventDefault()}>
+              <ul>
+                {this.props.errors.map((error, idx) => <li key={idx}>{error}</li>)}
+              </ul>
+
+              <label>EMAIL</label>
+              <input
+                type="text"
+                value={this.state.email}
+                onChange={this.handleInput("email")}
+                className={this.emailClass()}
+                onClick={this.setActive("email")}
+              />
+              <div className="errors">
+                {this.validEmail() ? "" : "Please enter a valid email"}
+              </div>
+
+              <label>PASSWORD</label>
+              <input
+                type="text" value={this.state.password}
+                onChange={this.handleInput("password")}
+                className={this.passwordClass()}
+                onClick={this.setActive("password")}
+              />
+              <div className="errors">
+                {this.validPassword() ? "" : "Password must be at least 6 characters long"}
+              </div>
+
+              <div className={"name-input"}>
+                <div className="input-container first">
+                  <label>FIRST NAME</label>
+                  <input
+                    type="text"
+                    value={this.state.first_name}
+                    onChange={this.handleInput("first_name")}
+                    className={this.firstNameClass()}
+                    onClick={this.setActive("first_name")}
+                  />
+                </div>
+                <div className="input-container middle">
+                  <label>MIDDLE IN.</label>
+                  <input
+                    type="text"
+                    value={this.state.middle_initial}
+                    onChange={this.handleInput("middle_initial")}
+                    onClick={this.setActive("middle_initial")}
+                  />
+                </div>
+                <div className="input-container last">
+                  <label>LAST NAME</label>
+                  <input
+                    type="text"
+                    value={this.state.last_name}
+                    onChange={this.handleInput("last_name")}
+                    className={this.lastNameClass()}
+                    onClick={this.setActive("last_name")}
+                  />
+                </div>
+              </div>
+              <div className="errors">
+                {this.nameErrorMessage()}
+              </div>
+
+              <div className="age-gender">
+                <div className="age">
+                  <label>AGE</label>
+                  <input
+                    type="number"
+                    value={this.state.age}
+                    onChange={this.handleInput("age")}
+                    className={this.ageClass()}
+                    onClick={this.setActive("age")}
+                  />
+                </div>
+                <div className="gender">
+                  <label>GENDER</label>
+                  <select
+                    defaultValue={"select"}
+                    onChange={this.handleInput("gender")}
+                    className={this.genderClass()}
+                    onClick={this.setActive("gender")}
+                  >
+                    <option value="select" disabled={true}>Select</option>
+                    <option value={null} name="na">Prefer Not to Say</option>
+                    <option value="Male" name="Male">Male</option>
+                    <option value="Female" name="Female">Female</option>
+                  </select>
+                </div>
+              </div>
+              <div className="errors">
+                {this.ageGenderErrorMessage()}
+              </div>
+            </form>
+            <p>By clicking "SUBMIT" you agree to not abuse my wallet by streaming videos.</p>
+            <button
+              onClick={this.allValid() ? this.handleSubmit : e => e.preventDefault()}
+              className={this.allValid() ? "button" : "disabled-button"}
+            >SUBMIT</button>
+          </div>
+
+        </div>
       </div>
     )
   }

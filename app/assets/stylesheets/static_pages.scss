@@ -50,25 +50,94 @@ button {
 button,
 input[type="submit"] {
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }
 
 .hidden {
   display: none
 }
 
-form {
-  position: absolute;
+.modal {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.form-container {
+  position: relative;
+  text-align: center;
   top: 100px;
-  left: 50%;
-  margin-left: -220px;
-  width: 360px;
-  padding: 20px;
-  background: #fff;
   z-index: 3;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.form-container h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  padding: 30px 0;
+}
+
+.form-container label {
+  font-weight: bolder;
 }
 
 input {
   background-color: #F7F7F7;
+  padding-left: 11px;
+  font-size: 16px;
+}
+
+.input {
+  position: relative;
+}
+
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 55px;
+}
+
+.errors {
+  height: 12px;
+  padding: 5px;
+  color: #B00100;
+}
+
+.input.invalid-input {
+  border: 2px solid #B00100;
+}
+
+.background {
+  background-color: #EFEFEF;
+  position: absolute;
+  height: 1000px;
+  width: 100%;
+  display: block;
+}
+
+.button {
+  text-align: center;
+}
+
+.disabled-button {
+  background-color: #999999;
+  color: #EFEFEF;
+}
+
+.disabled-button:hover{
+  cursor: default;
 }

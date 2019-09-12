@@ -7,45 +7,40 @@
   box-sizing: border-box;
 }
 
-.nav-bar .logo {
+.bar {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  z-index: 2;
+  background-color: white;
+  height: 60px;
+}
+
+.logo {
   font-family: Futura;
   font-weight: bolder;
   font-size: 20px;
 }
 
-.modal {
-  position: fixed;
-  background: rgba(0, 0, 0, 0.7);
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-}
-
-.nav-bar .right {
+.right {
   display: flex;
   flex-direction: row;
 }
 
-.nav-bar .left {
+.left {
   display: flex;
   flex-direction: row;
 }
 
-.nav-bar .item {
-  height: 72px;
-  padding: 25px 10px 0 10px;
+.item {
+  height: 60px;
+  padding: 20px 20px 0 20px;
 }
 
-.nav-bar .item:hover {
-}
-
-.nav-bar form {
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  font-size: 12px;
-  padding: 55px;
+.item:hover {
 }
 
 .nav-bar .button {

@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :first_name, :last_name, presence: true
+  validates :gender, inclusion: ["Male", "Female", nil], allow_nil: true;
   validate :is_number?
 
   after_initialize :ensure_session_token

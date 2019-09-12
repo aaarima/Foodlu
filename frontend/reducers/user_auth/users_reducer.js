@@ -2,9 +2,9 @@ import { RECEIVE_USER } from "../../actions/session_actions";
 
 
 const usersReducer = (state={}, action) => {
-  Object.freeze(state)
+  Object.freeze(state);
 
-  let newState = Object.assign({}, state)
+  let newState = Object.assign({}, state);
   
   switch (action.type) {
     case RECEIVE_USER: 
@@ -13,6 +13,6 @@ const usersReducer = (state={}, action) => {
     default:
       return state;
   }
-}
+};
 
 export default usersReducer;

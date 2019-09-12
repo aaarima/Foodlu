@@ -1,5 +1,5 @@
 {
-  "name": "Godzillu",
+  "name": "foodlu",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.6.0",
@@ -33,15 +33,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aaarima/Godzillu.git"
+    "url": "git+https://github.com/aaarima/foodlu.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aaarima/Godzillu/issues"
+    "url": "https://github.com/aaarima/foodlu/issues"
   },
-  "homepage": "https://github.com/aaarima/Godzillu#readme",
+  "homepage": "https://github.com/aaarima/foodlu#readme",
   "devDependencies": {
     "webpack-cli": "^3.3.8"
   }

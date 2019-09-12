@@ -5,7 +5,11 @@ import NavBar from "../nav_bar/NavBar";
 
 const Welcome = props => (
   <div>
-    <NavBar left={[<p key={"logo"} className="logo">Godzillu</p>]} right={[]}/>
+    <NavBar left={[<p key={"logo"} className="logo">foodlu</p>]} right={[
+      (<button className={"button"} onClick={e => {props.toggleLoginPage(); props.toggleModal()}}>LOG IN</button>),
+      (<Link to={"/signup"}>SIGN UP</Link>)
+    ]}/>
+    <SignInContainer/>
   </div>
 );
 

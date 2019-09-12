@@ -1,7 +1,7 @@
 import React from "react";
 
 function delay(t, v) {
-  return new Promise(function(resolve) {
+  return new Promise(function (resolve) {
     setTimeout(resolve.bind(null, v), t)
   });
 }
@@ -12,7 +12,10 @@ export default class SignIn extends React.Component {
     this.state = {
       email: "",
       password: "",
-      active: false
+      active: {
+        email: false,
+        password: false
+      }
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -31,42 +34,85 @@ export default class SignIn extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    this.setState({
-      active: !this.state.active
-    })
+    this.props.toggleModal();
   }
 
   handleDemo(e) {
-    e.preventDefault()
+    e.preventDefault();
+    this.setState({
+      email: "demo@email.com"
+    });
+    setTimeout(() => this.setState({password: "123456"}), 700);
+    setTimeout(() => this.handleSubmit(e), 1400);
+  }
+
+  validEmail() {
+    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email);
+  }
+
+  validPassword() {
+    return this.state.password.length > 5;
+  }
+
+  emailClass() {
+    if (!this.state.active.email || this.validEmail()) {
+      return "input"
+    } else {
+      return "input invalid-input"
+    }
+  }
+
+  passwordClass() {
+    if (!this.state.active.password || this.validPassword()) {
+      return "input"
+    } else {
+      return "input invalid-input"
+    }
+  }
+
+  setActive(field) {
+    return e => {
+      this.setState({
+        active: {
+          [field]: true
+        }
+      });
+    }
   }
 
   render() {
     return (
-      <div>
-        <button className={"button"} onClick={this.handleClick}>LOG IN</button>
-        <div className={this.state.active ? "modal" : "hidden"} onClick={this.handleClick}>
-          <form className={this.state.active ? "sign-in" : "hidden"} onClick={e => e.stopPropagation()}>
-            <h3 className="h3">Log in to Godzillu</h3>
-            <label className="label">EMAIL</label>
-            <input
-              className={this.state.password.length > 0 ? "input filled" : "input"}
-              type="text"
-              value={this.state.email}
-              onChange={this.handleInput("username")}
-            />
-            <label className="label">PASSWORD</label>
-            <input
-              className={this.state.password.length > 0 ? "input filled" : "input"}
-              type="text"
-              value={this.state.password}
-              onChange={this.handleInput("password")}
-            />
-            <p>{this.props.errors.join(", ")}</p>
-            <button onClick={this.handleSubmit} className="button">LOG IN</button>
+      <div className="form-container" onClick={this.props.toggleModal}>
+        <form className={this.props.active ? "sign-in" : "hidden"} onClick={e => e.stopPropagation()}>
+          <h3 className="h3">Log in to foodlu</h3>
+          <label className="label">EMAIL</label>
+          <input
+            className={this.emailClass()}
+            type="text"
+            value={this.state.email}
+            onChange={this.handleInput("email")}
+            onClick={this.setActive("email")}
+          />
+          <div className="errors">
+            {this.emailClass() === "input" ? "" : "Please Enter a Valid Email"}
+          </div>
+          <label className="label">PASSWORD</label>
+          <input
+            className={this.passwordClass()}
+            type="text"
+            value={this.state.password}
+            onChange={this.handleInput("password")}
+            onClick={this.setActive("password")}
+          />
+          <div className="errors">
+            {this.passwordClass() === "input" ? "" : "Password must be 6 characters long"}
+          </div>
+          <p>{this.props.errors.join(", ")}</p>
+          <button onClick={this.handleSubmit} className="button">LOG IN</button>
 
-            <p>Don't want to waste time creating an account? <a onClick={this.handleDemo}>Click Here to login with a demo account!</a></p>
-          </form>
-        </div>
+          <p>Don't want to waste time creating an account? <a onClick={this.handleDemo}>Click Here to login with a demo
+            account!</a></p>
+        </form>
       </div>
     )
   }
