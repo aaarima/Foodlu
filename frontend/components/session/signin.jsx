@@ -28,7 +28,9 @@ export default class SignIn extends React.Component {
         active: {
           email: false,
           password: false
-        }
+        },
+        email: "",
+        password: ""
       })
     }
   }

@@ -610,7 +610,9 @@ function (_React$Component) {
           active: {
             email: false,
             password: false
-          }
+          },
+          email: "",
+          password: ""
         });
       }
     }
@@ -1037,9 +1039,12 @@ function (_React$Component) {
         className: "left"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "item"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        key: "logo",
         className: "logo"
-      }, "foodlu"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "foodlu")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "right"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "item",

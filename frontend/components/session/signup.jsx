@@ -158,7 +158,7 @@ export default class SignUp extends React.Component {
         <div className="bar">
           <div className="left">
             <div className="item">
-              <p className="logo">foodlu</p>
+              <Link to={"/"}><p key={"logo"} className="logo">foodlu</p></Link>
             </div>
           </div>
           <div className="right">
