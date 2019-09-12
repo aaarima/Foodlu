@@ -1308,7 +1308,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   var root = document.getElementById("root");
-  window.getState = store.getState;
+
+  if (true) {
+    window.getState = store.getState;
+  }
+
   react_dom__WEBPACK_IMPORTED_MODULE_3___default.a.render(react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_1__["default"], {
     store: store
   }), root);

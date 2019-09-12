@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   let root = document.getElementById("root");
 
-  window.getState = store.getState;
+  if (process.env.NODE_ENV !== 'production') {
+    window.getState = store.getState;
+  }
 
   ReactDom.render(<Root store={store}/>, root)
 });
