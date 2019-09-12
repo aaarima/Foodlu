@@ -567,12 +567,28 @@ function (_React$Component) {
   }
 
   _createClass(SignIn, [{
-    key: "handleInput",
-    value: function handleInput(str) {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
       var _this2 = this;
 
+      if (this.props.active === false && !Object.keys(this.state.active).every(function (el) {
+        return !_this2.state.active[el];
+      })) {
+        this.setState({
+          active: {
+            email: false,
+            password: false
+          }
+        });
+      }
+    }
+  }, {
+    key: "handleInput",
+    value: function handleInput(str) {
+      var _this3 = this;
+
       return function (e) {
-        _this2.setState(_defineProperty({}, str, e.target.value));
+        _this3.setState(_defineProperty({}, str, e.target.value));
       };
     }
   }, {
@@ -591,19 +607,19 @@ function (_React$Component) {
   }, {
     key: "handleDemo",
     value: function handleDemo(e) {
-      var _this3 = this;
+      var _this4 = this;
 
       e.preventDefault();
       this.setState({
         email: "demo@email.com"
       });
       setTimeout(function () {
-        return _this3.setState({
+        return _this4.setState({
           password: "123456"
         });
       }, 700);
       setTimeout(function () {
-        return _this3.handleSubmit();
+        return _this4.handleSubmit();
       }, 1400);
     }
   }, {
@@ -640,12 +656,12 @@ function (_React$Component) {
   }, {
     key: "setActive",
     value: function setActive(field) {
-      var _this4 = this;
+      var _this5 = this;
 
       var nextActiveState = Object.assign({}, this.state.active);
       nextActiveState[field] = true;
       return function (e) {
-        _this4.setState({
+        _this5.setState({
           active: nextActiveState
         });
       };
@@ -824,38 +840,22 @@ function (_React$Component) {
       this.props.clearSessionErrors();
     }
   }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate() {
-      var _this2 = this;
-
-      if (this.props.active === false && !Object.keys(this.state.active).every(function (el) {
-        return !_this2.state.active[el];
-      })) {
-        this.setState({
-          active: {
-            email: false,
-            password: false
-          }
-        });
-      }
-    }
-  }, {
     key: "handleInput",
     value: function handleInput(str) {
-      var _this3 = this;
+      var _this2 = this;
 
       return function (e) {
-        _this3.setState(_defineProperty({}, str, e.target.value));
+        _this2.setState(_defineProperty({}, str, e.target.value));
       };
     }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      var _this4 = this;
+      var _this3 = this;
 
       e.preventDefault();
       this.props.createUser(this.state).then(function () {
-        return _this4.props.history.push("/");
+        return _this3.props.history.push("/");
       });
     }
   }, {
@@ -984,12 +984,12 @@ function (_React$Component) {
   }, {
     key: "setActive",
     value: function setActive(field) {
-      var _this5 = this;
+      var _this4 = this;
 
       var nextActiveState = Object.assign({}, this.state.active);
       nextActiveState[field] = true;
       return function (e) {
-        _this5.setState({
+        _this4.setState({
           active: nextActiveState
         });
       };
@@ -997,7 +997,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this6 = this;
+      var _this5 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bar"
@@ -1012,9 +1012,9 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "item",
         onClick: function onClick(e) {
-          _this6.props.toggleLoginPage();
+          _this5.props.toggleLoginPage();
 
-          _this6.props.toggleModal();
+          _this5.props.toggleModal();
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/welcome"

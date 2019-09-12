@@ -22,6 +22,17 @@ export default class SignIn extends React.Component {
     this.handleDemo = this.handleDemo.bind(this);
   }
 
+  componentDidUpdate() {
+    if (this.props.active === false && !Object.keys(this.state.active).every(el => !this.state.active[el])) {
+      this.setState({
+        active: {
+          email: false,
+          password: false
+        }
+      })
+    }
+  }
+
   handleInput(str) {
     return (e) => {
       this.setState({ [str]: e.target.value })
