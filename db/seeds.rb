@@ -92,5 +92,17 @@ ActiveRecord::Base.transaction do
     content_rating: "G",
     year: 2007
   )
+  Movie.create!(
+    title: "Chef",
+    description: "A head chef quits his restaurant job and buys a food truck in an effort to reclaim his creative promise, while piecing back together his estranged family.",
+    content_rating: "R",
+    year: 2014
+  )
+  Movie.create!(
+    title: "Food Inc.",
+    description: "An unflattering look inside America's corporate controlled food industry.",
+    content_rating: "PG",
+    year: 2008
+  )
 
 end

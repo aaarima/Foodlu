@@ -24,7 +24,7 @@
 
 .sign-in {
   width: 420px;
-  height: 500px;
+  height: 530px;
   box-sizing: border-box;
   background-color: white;
   text-align: left;
@@ -44,7 +44,6 @@
 
 .sign-in .h3 {
   font-size: 24px;
-  font-weight: lighter;
 }
 
 .sign-in .button {
@@ -69,6 +68,12 @@
 
 .sign-in a:hover {
   cursor: pointer;
+}
+.form-container .sign-in p {
+  font-size: 14px;
+  color: #BBBBBB;
+  padding: 20px 0 0 0;
+  text-align: center;
 }
 
 .sign-in .errors {
