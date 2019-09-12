@@ -2,25 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6706d020-a9d6-43fb-8ff5-8aed9fa6142e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/foodlu.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Godzillu.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/javascripts/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/javascripts/bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/bulk_import/nav_bar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bulk_import/nav_bar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/bulk_import/user_auth.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bulk_import/user_auth.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/sessions_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/sessions_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/actions/session_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/actions/session_actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/signin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/session/signin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/signin_container.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/session/signin_container.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/session/signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/session/signup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/signup_container.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/session/signup_container.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/ui/ui_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reducers/ui/ui_reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/user_auth/session_errors_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reducers/user_auth/session_errors_reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/util/session_util.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/util/session_util.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +166,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568266617184</updated>
-      <workItem from="1568266624017" duration="6288000" />
+      <workItem from="1568266624017" duration="7559000" />
     </task>
     <servers />
   </component>

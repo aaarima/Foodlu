@@ -29,6 +29,17 @@ export default class SignUp extends React.Component {
     this.props.clearSessionErrors();
   }
 
+  componentDidUpdate() {
+    if (this.props.active === false && !Object.keys(this.state.active).every(el => !this.state.active[el])) {
+      this.setState({
+        active: {
+          email: false,
+          password: false
+        }
+      })
+    }
+  }
+
   handleInput(str) {
     return (e) => {
       this.setState({ [str]: e.target.value })
