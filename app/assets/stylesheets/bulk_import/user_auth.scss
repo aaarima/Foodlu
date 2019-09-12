@@ -32,6 +32,13 @@
   text-align: center;
 }
 
+.sign-in .disabled-button {
+  width: 100%;
+  height: 56px;
+  font-size: 16px;
+  text-align: center;
+}
+
 .sign-in a {
   color: dodgerblue;
 }
@@ -46,12 +53,13 @@
 
 .sign-up {
   width: 500px;
-  height: 350px;
+  height: 380px;
   display: flex;
   flex-direction: column;
   text-align: left;
   background-color: white;
   padding: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .sign-up input {
@@ -78,13 +86,6 @@
 .middle {
   margin-left: 10px;
   margin-right: 10px;
-}
-
-.sign-up .button {
-  width: 450px;
-  height: 56px;
-  background-color: black;
-  color: white;
 }
 
 .middle input {
@@ -114,7 +115,14 @@
   border: 2px solid gainsboro;
 }
 
-.form-container .disabled-button {
+.form-container button {
+  width: 450px;
+  height: 56px;
+  background-color: black;
+  color: white;
+}
+
+.disabled-button {
   width: 450px;
   height: 56px;
 }

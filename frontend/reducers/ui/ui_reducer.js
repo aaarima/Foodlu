@@ -1,4 +1,5 @@
 import { TOGGLE_LOGIN_PAGE, TOGGLE_MODAL } from "../../actions/ui_actions";
+import { RECEIVE_USER } from "../../actions/session_actions";
 
 // hide any elements that are on top of the modal if turning modal off
 const turnOffAllPopups = (newState) => {
@@ -23,6 +24,9 @@ const uiReducer = (state={}, action) => {
     case TOGGLE_MODAL:
       turnOffAllPopups(newState);
       newState.modal = !state.modal;
+      return newState;
+    case RECEIVE_USER:
+      newState.modal = false;
       return newState;
     default:
       return state;

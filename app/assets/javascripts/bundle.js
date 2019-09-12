@@ -90,7 +90,7 @@
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_USER, LOGOUT_USER, RECEIVE_SESSION_ERRORS, receiveUser, logoutUser, createUser, login, logout, receiveSessionErrors */
+/*! exports provided: RECEIVE_USER, LOGOUT_USER, RECEIVE_SESSION_ERRORS, CLEAR_SESSION_ERRORS, receiveUser, logoutUser, clearSessionErrors, createUser, login, logout, receiveSessionErrors */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98,8 +98,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_USER", function() { return RECEIVE_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGOUT_USER", function() { return LOGOUT_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SESSION_ERRORS", function() { return RECEIVE_SESSION_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_SESSION_ERRORS", function() { return CLEAR_SESSION_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveUser", function() { return receiveUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logoutUser", function() { return logoutUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearSessionErrors", function() { return clearSessionErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createUser", function() { return createUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
@@ -109,6 +111,7 @@ __webpack_require__.r(__webpack_exports__);
 var RECEIVE_USER = "RECEIVE_USER";
 var LOGOUT_USER = "LOGOUT_USER";
 var RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+var CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
 var receiveUser = function receiveUser(user) {
   return {
     type: RECEIVE_USER,
@@ -118,6 +121,11 @@ var receiveUser = function receiveUser(user) {
 var logoutUser = function logoutUser() {
   return {
     type: LOGOUT_USER
+  };
+};
+var clearSessionErrors = function clearSessionErrors() {
+  return {
+    type: CLEAR_SESSION_ERRORS
   };
 };
 var createUser = function createUser(user) {
@@ -151,7 +159,6 @@ var receiveSessionErrors = function receiveSessionErrors(errors) {
     errors: errors
   };
 };
-window.receiveSessionErrors = receiveSessionErrors;
 
 /***/ }),
 
@@ -555,6 +562,7 @@ function (_React$Component) {
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    _this.handleDemo = _this.handleDemo.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -570,15 +578,16 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      e.preventDefault();
-      this.props.login(this.state);
+      if (e) e.preventDefault();
+      this.props.login(this.state).then(this.props.toggleLoginPage);
     }
   }, {
     key: "handleClick",
     value: function handleClick(e) {
       e.preventDefault();
       this.props.toggleModal();
-    }
+    } // handle the demo login. has a cool pasting animation.
+
   }, {
     key: "handleDemo",
     value: function handleDemo(e) {
@@ -594,7 +603,7 @@ function (_React$Component) {
         });
       }, 700);
       setTimeout(function () {
-        return _this3.handleSubmit(e);
+        return _this3.handleSubmit();
       }, 1400);
     }
   }, {
@@ -624,17 +633,27 @@ function (_React$Component) {
       } else {
         return "input invalid-input";
       }
-    }
+    } // this is to see if a field has been typed in or not.
+    // When the page loads, the desired layout is to have no errors initially until
+    // the user starts typing in the field.
+
   }, {
     key: "setActive",
     value: function setActive(field) {
       var _this4 = this;
 
+      var nextActiveState = Object.assign({}, this.state.active);
+      nextActiveState[field] = true;
       return function (e) {
         _this4.setState({
-          active: _defineProperty({}, field, true)
+          active: nextActiveState
         });
       };
+    }
+  }, {
+    key: "allValid",
+    value: function allValid() {
+      return this.validEmail() && this.validPassword();
     }
   }, {
     key: "render",
@@ -669,10 +688,12 @@ function (_React$Component) {
         onClick: this.setActive("password")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "errors"
-      }, this.passwordClass() === "input" ? "" : "Password must be 6 characters long"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.errors.join(", ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleSubmit,
-        className: "button"
-      }, "LOG IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Don't want to waste time creating an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, this.passwordClass() === "input" ? "" : "Password must be 6 characters long"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "errors"
+      }, this.props.errors.join(", ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.allValid() ? this.handleSubmit : null,
+        className: this.allValid() ? "button" : "disabled-button"
+      }, this.allValid() ? "LOG IN" : "Credentials Invalid"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Don't want to waste time creating an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         onClick: this.handleDemo
       }, "Click Here to login with a demo account!"))));
     }
@@ -717,6 +738,9 @@ var mDTP = function mDTP(dispatch) {
     },
     toggleModal: function toggleModal() {
       return dispatch(Object(_actions_ui_actions__WEBPACK_IMPORTED_MODULE_2__["toggleModal"])());
+    },
+    toggleLoginPage: function toggleLoginPage() {
+      return dispatch(Object(_actions_ui_actions__WEBPACK_IMPORTED_MODULE_2__["toggleLoginPage"])());
     }
   };
 };
@@ -795,6 +819,11 @@ function (_React$Component) {
   }
 
   _createClass(SignUp, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.clearSessionErrors();
+    }
+  }, {
     key: "handleInput",
     value: function handleInput(str) {
       var _this2 = this;
@@ -806,8 +835,12 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
-      this.props.createUser(this.state).then(this.props.history.push("/"));
+      this.props.createUser(this.state).then(function () {
+        return _this3.props.history.push("/");
+      });
     }
   }, {
     key: "validEmail",
@@ -829,11 +862,11 @@ function (_React$Component) {
     value: function nameErrorMessage() {
       var errorMessage = [];
 
-      if (!this.validFirstName()) {
+      if (this.firstNameClass() !== "input") {
         errorMessage.push("Invalid First Name");
       }
 
-      if (!this.validLastName()) {
+      if (this.lastNameClass() !== "input") {
         errorMessage.push("Invalid Last Name");
       }
 
@@ -854,11 +887,11 @@ function (_React$Component) {
     value: function ageGenderErrorMessage() {
       var error = [];
 
-      if (!this.validGender()) {
+      if (this.genderClass() !== "input") {
         error.push("Please Select an Option");
       }
 
-      if (!this.validAge()) {
+      if (this.ageClass() !== "input") {
         error.push("Please Enter a Valid Age");
       }
 
@@ -873,7 +906,8 @@ function (_React$Component) {
     key: "allValid",
     value: function allValid() {
       return this.validAge() && this.validEmail() && this.validFirstName() && this.validLastName() && this.validGender() && this.validPassword();
-    }
+    } // Methods to determine what class to give elements
+
   }, {
     key: "emailClass",
     value: function emailClass() {
@@ -927,22 +961,27 @@ function (_React$Component) {
       } else {
         return "input invalid-input";
       }
-    }
+    } // this is to see if a field has been typed in or not.
+    // When the page loads, the desired layout is to have no errors initially until
+    // the user starts typing in the field.
+
   }, {
     key: "setActive",
     value: function setActive(field) {
-      var _this3 = this;
+      var _this4 = this;
 
+      var nextActiveState = Object.assign({}, this.state.active);
+      nextActiveState[field] = true;
       return function (e) {
-        _this3.setState({
-          active: _defineProperty({}, field, true)
+        _this4.setState({
+          active: nextActiveState
         });
       };
     }
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this5 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "bar"
@@ -957,9 +996,9 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "item",
         onClick: function onClick(e) {
-          _this4.props.toggleLoginPage();
+          _this5.props.toggleLoginPage();
 
-          _this4.props.toggleModal();
+          _this5.props.toggleModal();
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/welcome"
@@ -972,11 +1011,7 @@ function (_React$Component) {
         onSubmit: function onSubmit(e) {
           return e.preventDefault();
         }
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, idx) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: idx
-        }, error);
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "EMAIL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "EMAIL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.email,
         onChange: this.handleInput("email"),
@@ -984,7 +1019,7 @@ function (_React$Component) {
         onClick: this.setActive("email")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "errors"
-      }, this.validEmail() ? "" : "Please enter a valid email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "PASSWORD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.emailClass() === "input" ? "" : "Please enter a valid email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "PASSWORD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.password,
         onChange: this.handleInput("password"),
@@ -992,7 +1027,7 @@ function (_React$Component) {
         onClick: this.setActive("password")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "errors"
-      }, this.validPassword() ? "" : "Password must be at least 6 characters long"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.passwordClass() === "input" ? "" : "Password must be at least 6 characters long"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name-input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "input-container first"
@@ -1050,12 +1085,14 @@ function (_React$Component) {
         name: "Female"
       }, "Female")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "errors"
-      }, this.ageGenderErrorMessage())), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "By clicking \"SUBMIT\" you agree to not abuse my wallet by streaming videos."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, this.ageGenderErrorMessage()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "errors"
+      }, this.props.errors.join(", "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "By clicking \"SUBMIT\" you agree to not abuse my wallet by streaming videos."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.allValid() ? this.handleSubmit : function (e) {
           return e.preventDefault();
         },
         className: this.allValid() ? "button" : "disabled-button"
-      }, "SUBMIT"))));
+      }, this.allValid() ? "SUBMIT" : "Invalid Input(s)"))));
     }
   }]);
 
@@ -1100,6 +1137,9 @@ var mDTP = function mDTP(dispatch) {
     },
     toggleLoginPage: function toggleLoginPage() {
       return dispatch(Object(_actions_ui_actions__WEBPACK_IMPORTED_MODULE_3__["toggleLoginPage"])());
+    },
+    clearSessionErrors: function clearSessionErrors() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["clearSessionErrors"])());
     }
   };
 };
@@ -1293,6 +1333,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_ui_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../actions/ui_actions */ "./frontend/actions/ui_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+
  // hide any elements that are on top of the modal if turning modal off
 
 var turnOffAllPopups = function turnOffAllPopups(newState) {
@@ -1321,6 +1363,10 @@ var uiReducer = function uiReducer() {
       newState.modal = !state.modal;
       return newState;
 
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_USER"]:
+      newState.modal = false;
+      return newState;
+
     default:
       return state;
   }
@@ -1340,6 +1386,8 @@ var uiReducer = function uiReducer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_ui_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/ui_actions */ "./frontend/actions/ui_actions.js");
+
 
 
 var sessionErrorsReducer = function sessionErrorsReducer() {
@@ -1353,8 +1401,14 @@ var sessionErrorsReducer = function sessionErrorsReducer() {
       return [];
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SESSION_ERRORS"]:
-      if (action.errors.responseJSON) return newState.concat(action.errors.responseJSON);
-      return newState.concat([action.errors.responseTEXT]);
+      if (action.errors.responseJSON) return action.errors.responseJSON;
+      return [action.errors.responseTEXT];
+
+    case _actions_ui_actions__WEBPACK_IMPORTED_MODULE_1__["TOGGLE_LOGIN_PAGE"]:
+      return [];
+
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_SESSION_ERRORS"]:
+      return [];
 
     default:
       return state;

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { login } from '../../actions/session_actions'
-import { toggleModal } from "../../actions/ui_actions";
+import { toggleModal, toggleLoginPage } from "../../actions/ui_actions";
 import SignIn from './signin'
 
 const mSTP = state => ({
@@ -10,7 +10,8 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
   login: (user) => dispatch(login(user)),
-  toggleModal: () => dispatch(toggleModal())
+  toggleModal: () => dispatch(toggleModal()),
+  toggleLoginPage: () => dispatch(toggleLoginPage())
 });
 
 export default connect(mSTP, mDTP)(SignIn)

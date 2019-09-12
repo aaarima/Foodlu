@@ -19,6 +19,7 @@ export default class SignIn extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   handleInput(str) {
@@ -28,8 +29,9 @@ export default class SignIn extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    if (e) e.preventDefault();
     this.props.login(this.state)
+      .then(this.props.toggleLoginPage);
   }
 
   handleClick(e) {
@@ -37,13 +39,14 @@ export default class SignIn extends React.Component {
     this.props.toggleModal();
   }
 
+  // handle the demo login. has a cool pasting animation.
   handleDemo(e) {
     e.preventDefault();
     this.setState({
       email: "demo@email.com"
     });
-    setTimeout(() => this.setState({password: "123456"}), 700);
-    setTimeout(() => this.handleSubmit(e), 1400);
+    setTimeout(() => this.setState({ password: "123456" }), 700);
+    setTimeout(() => this.handleSubmit(), 1400);
   }
 
   validEmail() {
@@ -70,14 +73,21 @@ export default class SignIn extends React.Component {
     }
   }
 
+  // this is to see if a field has been typed in or not.
+  // When the page loads, the desired layout is to have no errors initially until
+  // the user starts typing in the field.
   setActive(field) {
+    let nextActiveState = Object.assign({}, this.state.active);
+    nextActiveState[field] = true;
     return e => {
       this.setState({
-        active: {
-          [field]: true
-        }
+        active: nextActiveState
       });
     }
+  }
+
+  allValid() {
+    return this.validEmail() && this.validPassword();
   }
 
   render() {
@@ -107,8 +117,13 @@ export default class SignIn extends React.Component {
           <div className="errors">
             {this.passwordClass() === "input" ? "" : "Password must be 6 characters long"}
           </div>
-          <p>{this.props.errors.join(", ")}</p>
-          <button onClick={this.handleSubmit} className="button">LOG IN</button>
+          <div className="errors">
+            {this.props.errors.join(", ")}
+          </div>
+          <button
+            onClick={this.allValid() ? this.handleSubmit : null}
+            className={this.allValid() ? "button" : "disabled-button"}
+          >{this.allValid() ? "LOG IN" : "Credentials Invalid"}</button>
 
           <p>Don't want to waste time creating an account? <a onClick={this.handleDemo}>Click Here to login with a demo
             account!</a></p>

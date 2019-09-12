@@ -65,6 +65,21 @@ input[type="submit"] {
   left: 0;
   right: 0;
   z-index: 2;
+  animation:fadein .5s;
+}
+
+@keyframes fadein {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .form-container {
@@ -112,8 +127,9 @@ form {
 }
 
 .errors {
-  height: 12px;
-  padding: 5px;
+  position: relative;
+  height: 16px;
+  margin: 3px;
   color: #B00100;
 }
 
@@ -133,11 +149,11 @@ form {
   text-align: center;
 }
 
-.disabled-button {
-  background-color: #999999;
+.form-container .disabled-button {
+  background-color: #CCCCCC;
   color: #EFEFEF;
 }
 
-.disabled-button:hover{
+.form-container .disabled-button:hover{
   cursor: default;
 }

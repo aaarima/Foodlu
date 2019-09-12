@@ -25,16 +25,19 @@ export default class SignUp extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearSessionErrors();
+  }
+
   handleInput(str) {
     return (e) => {
       this.setState({ [str]: e.target.value })
-
     }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createUser(this.state).then(this.props.history.push("/"))
+    this.props.createUser(this.state).then(() => this.props.history.push("/"))
   }
 
   validEmail() {
@@ -51,10 +54,10 @@ export default class SignUp extends React.Component {
 
   nameErrorMessage() {
     let errorMessage = [];
-    if(!this.validFirstName()) {
+    if(this.firstNameClass() !== "input") {
       errorMessage.push("Invalid First Name")
     }
-    if (!this.validLastName()) {
+    if (this.lastNameClass() !== "input") {
       errorMessage.push("Invalid Last Name")
     }
     return errorMessage.join(", ")
@@ -70,10 +73,10 @@ export default class SignUp extends React.Component {
 
   ageGenderErrorMessage() {
     let error = [];
-    if (!this.validGender()) {
+    if (this.genderClass() !== "input") {
       error.push("Please Select an Option");
     }
-    if (!this.validAge()) {
+    if (this.ageClass() !== "input") {
       error.push("Please Enter a Valid Age");
     }
     return error.join(', ')
@@ -88,6 +91,7 @@ export default class SignUp extends React.Component {
       && this.validGender() && this.validPassword();
   }
 
+  // Methods to determine what class to give elements
   emailClass() {
     if (!this.state.active.email || this.validEmail()) {
       return "input"
@@ -136,12 +140,15 @@ export default class SignUp extends React.Component {
     }
   }
 
+  // this is to see if a field has been typed in or not.
+  // When the page loads, the desired layout is to have no errors initially until
+  // the user starts typing in the field.
   setActive(field) {
+    let nextActiveState = Object.assign({}, this.state.active);
+    nextActiveState[field] = true;
     return e => {
       this.setState({
-        active: {
-          [field]: true
-        }
+        active: nextActiveState
       });
     }
   }
@@ -164,10 +171,6 @@ export default class SignUp extends React.Component {
           <div className={"form-container"}>
             <h1>Create Your Account</h1>
             <form className={"sign-up"} onSubmit={e => e.preventDefault()}>
-              <ul>
-                {this.props.errors.map((error, idx) => <li key={idx}>{error}</li>)}
-              </ul>
-
               <label>EMAIL</label>
               <input
                 type="text"
@@ -177,7 +180,7 @@ export default class SignUp extends React.Component {
                 onClick={this.setActive("email")}
               />
               <div className="errors">
-                {this.validEmail() ? "" : "Please enter a valid email"}
+                {this.emailClass() === "input" ? "" : "Please enter a valid email"}
               </div>
 
               <label>PASSWORD</label>
@@ -188,7 +191,7 @@ export default class SignUp extends React.Component {
                 onClick={this.setActive("password")}
               />
               <div className="errors">
-                {this.validPassword() ? "" : "Password must be at least 6 characters long"}
+                {this.passwordClass() === "input" ? "" : "Password must be at least 6 characters long"}
               </div>
 
               <div className={"name-input"}>
@@ -255,12 +258,15 @@ export default class SignUp extends React.Component {
               <div className="errors">
                 {this.ageGenderErrorMessage()}
               </div>
+              <div className="errors">
+                {this.props.errors.join(", ")}
+              </div>
             </form>
             <p>By clicking "SUBMIT" you agree to not abuse my wallet by streaming videos.</p>
             <button
               onClick={this.allValid() ? this.handleSubmit : e => e.preventDefault()}
               className={this.allValid() ? "button" : "disabled-button"}
-            >SUBMIT</button>
+            >{this.allValid() ? "SUBMIT" : "Invalid Input(s)"}</button>
           </div>
 
         </div>
