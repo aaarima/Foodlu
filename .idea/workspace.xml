@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6706d020-a9d6-43fb-8ff5-8aed9fa6142e" name="Default Changelist" comment="" />
+    <list default="true" id="6706d020-a9d6-43fb-8ff5-8aed9fa6142e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/bulk_import/nav_bar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/nav_bar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/bulk_import/user_auth.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/user_auth.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/api/movies_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/movies_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/movie.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/movie.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/static_pages/root.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/static_pages/root.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/session/signin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/session/signin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/welcome/welcome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/welcome/welcome.jsx" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,11 +49,21 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1QiwExwR04FST2o6Y2KIgB6waQA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Markdown" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Ruby" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/stylesheets" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -161,7 +187,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568266617184</updated>
-      <workItem from="1568266624017" duration="9273000" />
+      <workItem from="1568266624017" duration="26379000" />
     </task>
     <servers />
   </component>

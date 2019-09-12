@@ -716,9 +716,14 @@ function (_React$Component) {
         onClick: function onClick(e) {
           return e.stopPropagation();
         }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "close-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "h3"
-      }, "Log in to foodlu"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }, "Log in to foodlu"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "close",
+        onClick: this.props.toggleModal
+      }, "X")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "label"
       }, "EMAIL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: this.emailClass(),
@@ -1228,16 +1233,23 @@ var Welcome = function Welcome(props) {
       key: "logo",
       className: "logo"
     }, "foodlu"))],
-    right: [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    right: [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      to: "/signup"
+    }, "SIGN UP"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "button",
       onClick: function onClick(e) {
         props.toggleLoginPage();
         props.toggleModal();
       }
-    }, "LOG IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-      to: "/signup"
-    }, "SIGN UP")]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_signin_container__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+    }, "LOG IN")]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_session_signin_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "welcome-image-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "gradient"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Welcome to Foodlu!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://chopra.com/sites/default/files/field/image/6dailyhabitsofhappypeople2.jpg",
+    alt: ""
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Welcome);

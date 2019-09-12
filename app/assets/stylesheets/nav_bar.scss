@@ -1,10 +1,13 @@
 .nav-bar {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   width: 100%;
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
+  top: 0;
+  z-index: 100;
+  color: white;
 }
 
 .bar {

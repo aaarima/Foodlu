@@ -1,3 +1,27 @@
+.close-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 1004;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.close-container .close {
+  position: relative;
+  height: auto;
+  width:auto;
+  color: black;
+  font-size: 24px;
+  background-color: inherit;
+  top: -40px;
+  right: -30px;
+}
+
+.close-container .close:hover {
+  color: #999999;
+}
+
 .sign-in {
   width: 420px;
   height: 500px;
@@ -5,7 +29,7 @@
   background-color: white;
   text-align: left;
   align-items: flex-start;
-  z-index: 3;
+  z-index: 1003;
 }
 
 .sign-in .input {
