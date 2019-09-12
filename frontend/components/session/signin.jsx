@@ -120,7 +120,7 @@ export default class SignIn extends React.Component {
           <label className="label">PASSWORD</label>
           <input
             className={this.passwordClass()}
-            type="text"
+            type="password"
             value={this.state.password}
             onChange={this.handleInput("password")}
             onClick={this.setActive("password")}

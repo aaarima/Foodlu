@@ -730,7 +730,7 @@ function (_React$Component) {
         className: "label"
       }, "PASSWORD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: this.passwordClass(),
-        type: "text",
+        type: "password",
         value: this.state.password,
         onChange: this.handleInput("password"),
         onClick: this.setActive("password")
@@ -1068,7 +1068,7 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "errors"
       }, this.emailClass() === "input" ? "" : "Please enter a valid email"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "PASSWORD"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
+        type: "password",
         value: this.state.password,
         onChange: this.handleInput("password"),
         className: this.passwordClass(),

@@ -185,7 +185,7 @@ export default class SignUp extends React.Component {
 
               <label>PASSWORD</label>
               <input
-                type="text" value={this.state.password}
+                type="password" value={this.state.password}
                 onChange={this.handleInput("password")}
                 className={this.passwordClass()}
                 onClick={this.setActive("password")}
