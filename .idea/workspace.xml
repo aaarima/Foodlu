@@ -2,6 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6706d020-a9d6-43fb-8ff5-8aed9fa6142e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/welcome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/genre.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/genre_join.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/network.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/series.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20190912150059_create_genres.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20190912154817_create_series.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20190912154858_create_networks.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20190912155845_create_genre_joins.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20190912162855_change_column_series.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/fixtures/genre_joins.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/fixtures/genres.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/fixtures/networks.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/fixtures/series.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/models/genre_join_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/models/genre_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/models/network_test.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/models/series_test.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/javascripts/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/javascripts/bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/bundle.js.map" afterDir="false" />
@@ -187,7 +205,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568266617184</updated>
-      <workItem from="1568266624017" duration="26379000" />
+      <workItem from="1568266624017" duration="26645000" />
     </task>
     <servers />
   </component>
