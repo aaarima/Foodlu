@@ -4,6 +4,7 @@ import Home from "./home/home";
 import ModalContainer from './modal/modal_container'
 import SignUpContainer from './session/signup_container'
 import NotFound from "./notFound";
+import Footer from "./footer";
 import { ProtectedRoute, AuthRoute } from "../util/route_util";
 import { Switch, Route } from 'react-router-dom'
 
@@ -16,6 +17,7 @@ const App = (props) => (
       <AuthRoute path="/signup" component={SignUpContainer}/>
       <Route path="/" component={NotFound}/>
     </Switch>
+    <Footer/>
   </div>
 );
 
