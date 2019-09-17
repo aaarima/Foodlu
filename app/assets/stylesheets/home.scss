@@ -1,0 +1,41 @@
+.home-header {
+  position: relative;
+  height: 75vh;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  font-family: Poppins, sans-serif;
+  font-weight: 300;
+  align-items: center;
+}
+
+.home-header img {
+  position: absolute;
+  height: 100%;
+}
+
+.header-text {
+  position: absolute;
+  color: white;
+  margin-left: 10%;
+  width: 30vw;
+  z-index: 6;
+}
+
+.home-header h1 {
+  font-size: 40px;
+  font-weight: 200;
+}
+
+.home-header-container {
+  height: 65vh;
+}
+
+.test {
+  height: 500px;
+}
+
+.section {
+  margin: 5% 0;
+}
+

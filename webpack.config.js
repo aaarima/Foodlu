@@ -21,6 +21,10 @@ module.exports = {
             presets: ['@babel/env', '@babel/react']
           }
         },
+      },
+      {
+        test: /\.mp4$/,
+        use: 'file-loader?name=videos/[name].[ext]',
       }
     ]
   },

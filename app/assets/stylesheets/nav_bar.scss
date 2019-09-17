@@ -7,7 +7,35 @@
   box-sizing: border-box;
   top: 0;
   z-index: 100;
+}
+
+.nav-bar.top {
+  animation:backgroundFadeOut .5s;
   color: white;
+}
+
+.nav-bar.not-top {
+  animation:backgroundFadeIn .5s;
+  color: black;
+  background: rgba(255,255,255, .8);
+}
+
+@keyframes backgroundFadeOut {
+  from {
+    background: rgba(255,255,255, .8)
+  }
+  to {
+    background: rgba(255,255,255, 0)
+  }
+}
+
+@keyframes backgroundFadeIn {
+  from {
+    background: rgba(255,255,255, 0)
+  }
+  to {
+    background: rgba(255,255,255, .8)
+  }
 }
 
 .bar {
@@ -49,4 +77,19 @@
 
 .nav-bar .button {
   cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 30px;
+  width: 100px;
+}
+
+.dropdown div {
+  background-color: white;
+  opacity: .9;
 }

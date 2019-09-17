@@ -20,7 +20,9 @@ export default class UserDropdown extends React.Component {
       <div onMouseEnter={this.handleMouseOver} onMouseLeave={this.handleMouseOver} >
         <h3 className="h3">{this.props.user.firstName}</h3>
         <div className={this.state.active ? "dropdown" : "hidden"}>
-          <button onClick={this.props.logout}>LOG OUT</button>
+          <div>
+            <button onClick={this.props.logout}>LOG OUT</button>
+          </div>
         </div>
       </div>
     );

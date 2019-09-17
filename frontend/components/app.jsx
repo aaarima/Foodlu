@@ -1,6 +1,6 @@
 import React from 'react'
 import WelcomeContainer from './welcome/welcome_container'
-import Home from "./home/home";
+import HomeContainer from "./home/home_container";
 import ModalContainer from './modal/modal_container'
 import SignUpContainer from './session/signup_container'
 import NotFound from "./notFound";
@@ -12,7 +12,7 @@ const App = (props) => (
   <div>
     <ModalContainer/>
     <Switch>
-      <ProtectedRoute exact path="/" component={Home}/>
+      <ProtectedRoute exact path="/" component={HomeContainer}/>
       <AuthRoute path="/welcome" component={WelcomeContainer}/>
       <AuthRoute path="/signup" component={SignUpContainer}/>
       <Route path="/" component={NotFound}/>

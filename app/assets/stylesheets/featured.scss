@@ -1,0 +1,73 @@
+.main {
+  margin: 0 5vw;
+  z-index: 10;
+}
+
+.expander {
+  color: white;
+  font-family: Poppins, sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column-reverse;
+  //transition: moving .3s;
+}
+
+.img-container .large {
+
+}
+@keyframes moving {
+  from {transform: scaleX(1.0) scaleY(1.0);}
+  to {transform: scaleX(1.1) scaleY(1.5);}
+}
+
+.expander:hover {
+  //transition: moving .3s;
+  //-webkit-animation: moving 1s 1;
+  //animation: moving 1s 1;
+  //animation-fill-mode:forwards;
+  cursor: pointer;
+}
+
+.expander.large {
+  width: 50%;
+  display: flex;
+}
+
+.expander.large h1 {
+  z-index: 20;
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.expander.large h3 {
+  z-index: 20;
+  font-size: 14px;
+  font-weight: 300;
+  color: white;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 2%;
+  position: absolute;
+}
+
+.large-expanders .gradient {
+  z-index: 15;
+  opacity: .7;
+}
+
+.expander img {
+  position: absolute;
+  height: 100%;
+  z-index: 14;
+}
+
+.large-expanders {
+  display: flex;
+  flex-direction: row;
+  height: 30vh;
+  position: relative;
+}
