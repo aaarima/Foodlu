@@ -2,34 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6706d020-a9d6-43fb-8ff5-8aed9fa6142e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/javascripts/bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/featured.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/featured.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/nav_bar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/nav_bar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/show.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/show.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/videos/main.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/series.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/series.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/api/movies/index.json.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/movies/index.json.jbuilder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/api/series/index.json.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/series/index.json.jbuilder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/actions/ui_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/actions/ui_actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/expanders/featured.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/expanders/featured.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/expanders/featured_container.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/expanders/featured_container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/home/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/home/home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/home/home_container.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/home/home_container.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/movies/movie_show.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/movies/movie_show.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/movies/movie_show_container.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/movies/movie_show_container.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/sections/section.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/sections/section.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/entities_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reducers/entities_reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reducers/ui/ui_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reducers/ui/ui_reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -210,7 +188,7 @@
       <updated>1568266617184</updated>
       <workItem from="1568266624017" duration="26645000" />
       <workItem from="1568328670689" duration="107832000" />
-      <workItem from="1568832626477" duration="20804000" />
+      <workItem from="1568832626477" duration="23968000" />
     </task>
     <servers />
   </component>

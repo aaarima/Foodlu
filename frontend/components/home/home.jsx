@@ -18,11 +18,24 @@ function getThreeRandomItems(props) {
 
 export default class Home extends React.Component{
 
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchSeries();
     this.props.fetchGenres();
     this.props.fetchMovies();
     this.props.fetchEpisodes();
+  }
+
+  handleClick(show) {
+    return e => {
+      this.props.updateCurrentShow(show);
+      this.props.toggleModal();
+      show.watchableType === "series" ? this.props.toggleSeriesShow() : this.props.toggleMovieShow();
+    }
   }
 
   render() {
@@ -33,13 +46,16 @@ export default class Home extends React.Component{
         <NavBar left={[<Link to={"/"}><p key={"logo"} className="logo">foodlu</p></Link>]} right={[<UserDropdownContainer/>]} />
         <div className="home-header-container">
           <div className="home-header">
-            <div className="gradient" style={{backgroundImage: `linear-gradient(to left, transparent, ${threeFeatured[0].shellColor} 99%)`}}></div>
+            <div className="gradient" style={{backgroundImage: `linear-gradient(to left, transparent, ${threeFeatured[0].shellColor} 75%)`}}></div>
             <div className="gradient" style={{backgroundImage: `linear-gradient(to bottom, transparent, transparent, black 99%)`, opacity: .5, zIndex: 4}}></div>
             <img src={threeFeatured[0].thumbnail} alt="" />
             <div className={"header-text"}>
-              <h1>{`${threeFeatured[0].title} (${threeFeatured[0].year})`}</h1>
+              <h1 onClick={this.handleClick(threeFeatured[0])}>{`${threeFeatured[0].title} (${threeFeatured[0].year})`}</h1>
               <div className="description">
                 <h3>{threeFeatured[0].description}</h3>
+              </div>
+              <div>
+                <h2 onClick={this.handleClick(threeFeatured[0])} className="watch-button">WATCH NOW</h2>
               </div>
             </div>
           </div>

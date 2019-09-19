@@ -24,7 +24,7 @@ export default class FeaturedExpander extends React.Component {
       <div className="large-expanders">
         <div className="expander large" onClick={this.handleClick(this.props.items[0])}>
           <div className="gradient"
-               style={{ backgroundImage: `linear-gradient(to bottom, transparent, ${this.props.items[0].shellColor} 99%)` }}></div>
+               style={{ backgroundImage: `linear-gradient(to bottom, transparent, ${this.props.items[0].shellColor})` }}></div>
           <div className="img-container large">
             <img src={this.props.items[0].thumbnail} alt=""/>
           </div>
@@ -35,7 +35,7 @@ export default class FeaturedExpander extends React.Component {
         </div>
         <div className="expander large" onClick={this.handleClick(this.props.items[1])}>
           <div className="gradient"
-               style={{ backgroundImage: `linear-gradient(to bottom, transparent, ${this.props.items[1].shellColor} 99%)` }}></div>
+               style={{ backgroundImage: `linear-gradient(to bottom, transparent, ${this.props.items[1].shellColor})` }}></div>
           <div className="img-container large">
             <img src={this.props.items[1].thumbnail} alt=""/>
           </div>
