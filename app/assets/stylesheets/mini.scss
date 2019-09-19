@@ -12,7 +12,6 @@
 }
 
 .episode {
-  height: 30vh;
   width: 30vh;
   display: flex;
   flex-direction: column;
@@ -21,7 +20,7 @@
 }
 
 .episode .img-container {
-  height: 50%;
+  height: 15vh;
 }
 
 .episode .title, .mini .title {
