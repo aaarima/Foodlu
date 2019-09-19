@@ -4,7 +4,8 @@ import {
   TOGGLE_MOVIE_SHOW,
   TOGGLE_SERIES_SHOW,
   UPDATE_CURRENT_VIDEO,
-  UPDATE_CURRENT_SHOW
+  UPDATE_CURRENT_SHOW,
+  CLOSE_CURRENT_VIDEO
 } from "../../actions/ui_actions";
 import { RECEIVE_USER } from "../../actions/session_actions";
 
@@ -13,7 +14,7 @@ const turnOffAllPopups = (newState) => {
   if (newState.modal) {
     Object.keys(newState).forEach(el => {
       if (el !== "modal" && el !== "video") {
-        newState[el] = !newState[el]
+        newState[el] = false;
       }
     })
   }
@@ -36,6 +37,9 @@ const uiReducer = (state={}, action) => {
       return newState;
     case UPDATE_CURRENT_VIDEO:
       newState.video = action.video;
+      return newState;
+    case CLOSE_CURRENT_VIDEO:
+      newState.video = false;
       return newState;
     case TOGGLE_LOGIN_PAGE:
       newState.login = !state.login;

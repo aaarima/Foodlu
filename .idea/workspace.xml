@@ -2,39 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6706d020-a9d6-43fb-8ff5-8aed9fa6142e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/welcome.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/genre.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/genre_join.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/network.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/series.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20190912150059_create_genres.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20190912154817_create_series.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20190912154858_create_networks.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20190912155845_create_genre_joins.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/migrate/20190912162855_change_column_series.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/fixtures/genre_joins.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/fixtures/genres.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/fixtures/networks.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/fixtures/series.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/models/genre_join_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/models/genre_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/models/network_test.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/models/series_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/javascripts/bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/bulk_import/nav_bar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/nav_bar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/bulk_import/user_auth.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/user_auth.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/movies_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/movies_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/movie.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/movie.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/static_pages/root.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/static_pages/root.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/featured.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/featured.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/nav_bar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/nav_bar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/show.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/show.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/videos/main.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/series.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/series.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/movies/index.json.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/movies/index.json.jbuilder" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/series/index.json.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/series/index.json.jbuilder" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/session/signin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/session/signin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/welcome/welcome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/welcome/welcome.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/actions/ui_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/actions/ui_actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/app.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/expanders/featured.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/expanders/featured.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/expanders/featured_container.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/expanders/featured_container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/home/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/home/home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/home/home_container.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/home/home_container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/movies/movie_show.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/movies/movie_show.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/movies/movie_show_container.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/movies/movie_show_container.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/sections/section.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/sections/section.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/reducers/entities_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reducers/entities_reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/reducers/ui/ui_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reducers/ui/ui_reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +50,13 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -80,6 +82,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets" />
       <recent name="$PROJECT_DIR$/app/assets/stylesheets" />
     </key>
   </component>
@@ -206,6 +209,8 @@
       <option name="presentableId" value="Default" />
       <updated>1568266617184</updated>
       <workItem from="1568266624017" duration="26645000" />
+      <workItem from="1568328670689" duration="107832000" />
+      <workItem from="1568832626477" duration="20804000" />
     </task>
     <servers />
   </component>
@@ -217,13 +222,15 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/foodlu@Development__foodlu.rcov" NAME="Development: foodlu Coverage Results" MODIFIED="1568270072589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="foodlu" />
+    <SUITE FILE_PATH="coverage/foodlu@Development__foodlu.rcov" NAME="Development: foodlu Coverage Results" MODIFIED="1568329031208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="foodlu" />
   </component>
 </project>

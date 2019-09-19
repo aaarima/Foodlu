@@ -10,23 +10,31 @@
   overflow: hidden;
   display: flex;
   flex-direction: column-reverse;
-  //transition: moving .3s;
+  transition: transform .4s, z-index .4s linear;
+  z-index: 50;
 }
 
 .img-container .large {
 
 }
 @keyframes moving {
-  from {transform: scaleX(1.0) scaleY(1.0);}
-  to {transform: scaleX(1.1) scaleY(1.5);}
+  from {
+    transform: scale(1);
+    //z-index: 50;
+  }
+  to {
+    transform: scale(1.1);
+    //z-index: 55;
+  }
 }
 
-.expander:hover {
-  //transition: moving .3s;
+.expander:hover, .expander:active {
+  transform: scale(1.1);
   //-webkit-animation: moving 1s 1;
   //animation: moving 1s 1;
   //animation-fill-mode:forwards;
   cursor: pointer;
+  z-index: 55;
 }
 
 .expander.large {

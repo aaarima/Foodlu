@@ -23,8 +23,11 @@ module.exports = {
         },
       },
       {
+        test: /\.html$/,
+        loader: 'html-loader?attrs[]=video:src'
+      }, {
         test: /\.mp4$/,
-        use: 'file-loader?name=videos/[name].[ext]',
+        loader: 'url-loader?limit=10000&mimetype=video/mp4'
       }
     ]
   },

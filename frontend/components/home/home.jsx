@@ -4,7 +4,6 @@ import UserDropdownContainer from "./user_dropdown_container"
 import FeaturedExpanderContainer from "../expanders/featured_container";
 import MoviesContainer from "../movies/movies_index_container";
 import SeriesContainer from '../series/series_index_container'
-import MovieShowContainer from '../movies/movie_show_container'
 import { Link } from "react-router-dom";
 
 function getThreeRandomItems(props) {
@@ -23,6 +22,7 @@ export default class Home extends React.Component{
     this.props.fetchSeries();
     this.props.fetchGenres();
     this.props.fetchMovies();
+    this.props.fetchEpisodes();
   }
 
   render() {
@@ -31,12 +31,11 @@ export default class Home extends React.Component{
     return (
       <div>
         <NavBar left={[<Link to={"/"}><p key={"logo"} className="logo">foodlu</p></Link>]} right={[<UserDropdownContainer/>]} />
-        <MovieShowContainer/>
         <div className="home-header-container">
           <div className="home-header">
             <div className="gradient" style={{backgroundImage: `linear-gradient(to left, transparent, ${threeFeatured[0].shellColor} 99%)`}}></div>
             <div className="gradient" style={{backgroundImage: `linear-gradient(to bottom, transparent, transparent, black 99%)`, opacity: .5, zIndex: 4}}></div>
-            {/*<img src={threeFeatured[0].thumbnail} alt="" />*/}
+            <img src={threeFeatured[0].thumbnail} alt="" />
             <div className={"header-text"}>
               <h1>{`${threeFeatured[0].title} (${threeFeatured[0].year})`}</h1>
               <div className="description">
@@ -50,8 +49,6 @@ export default class Home extends React.Component{
           <SeriesContainer/>
           <MoviesContainer/>
         </div>
-        {/*<div className="test">*/}
-        {/*</div>*/}
       </div>
     )
   }

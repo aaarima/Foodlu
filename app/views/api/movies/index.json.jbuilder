@@ -6,6 +6,7 @@ not_include = Set["created_at", "updated_at"]
     json.watchable_type "movie"
     json.thumbnail url_for(movie.thumbnail)
     json.cover url_for(movie.cover)
+    json.video url_for(movie.video)
     json.genres movie.genres.map { |genre| genre.id }
   end
 end

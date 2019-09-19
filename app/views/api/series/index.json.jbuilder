@@ -7,5 +7,6 @@ not_include = Set["created_at", "updated_at",]
     json.thumbnail url_for series.thumbnail
     json.cover url_for series.cover
     json.genres series.genres.map { |genre| genre.id }
+    json.episodes series.episodes.map { |episode| episode.id }
   end
 end

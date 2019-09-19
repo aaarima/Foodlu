@@ -1,20 +1,21 @@
 import React from 'react';
+import EpisodeExpanderContainer from "../expanders/episode_container";
 
-export default class MovieShow extends React.Component {
+export default class SeriesShow extends React.Component {
   constructor(props) {
     super(props);
     this.closeModal = this.closeModal.bind(this);
     this.menuClick = this.menuClick.bind(this);
     this.openVideo = this.openVideo.bind(this);
     this.state = {
-      movie: false,
+      episodes: true,
       trailer: false,
       extras: false
     }
   }
 
   openVideo(e) {
-    this.props.updateCurrentVideo(this.props.show)
+    this.props.updateCurrentVideo(this.props.episodes[0])
   }
 
   closeModal(e) {
@@ -50,13 +51,16 @@ export default class MovieShow extends React.Component {
                   <p>{this.props.show.description}</p>
                 </div>
                 <div className="watch-container">
-                  <h3 className="item" onClick={this.openVideo}>WATCH MOVIE</h3>
+                  <h3 className="item" onClick={this.openVideo}>WATCH S1E1 {this.props.episodes[0].title}</h3>
                 </div>
               </div>
             </div>
           </div>
           <div className="bottom-section">
             <div className="nav">
+              <div className="item">
+                <p>Episodes</p>
+              </div>
               <div className="item">
                 <p>Extras</p>
               </div>
@@ -65,10 +69,10 @@ export default class MovieShow extends React.Component {
               </div>
             </div>
             <div>
-              <div className={this.state.movie ? "content-container" : "hidden"}>
-
+              <div className={this.state.episodes ? "content-container" : "hidden"}>
+                {this.props.episodes[0].id ? this.props.episodes.map(episode => <EpisodeExpanderContainer item={episode} key={episode.id}/>) : ""}
               </div>
-              <div className={this.state.movie ? "content-container" : "hidden"}>
+              <div className={this.state.series ? "content-container" : "hidden"}>
 
               </div>
             </div>

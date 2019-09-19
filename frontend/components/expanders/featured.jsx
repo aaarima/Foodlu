@@ -10,7 +10,12 @@ export default class FeaturedExpander extends React.Component {
     return e => {
       this.props.toggleModal();
       this.props.updateCurrentShow(show);
-      show.watchableType === "series" ? this.props.toggleSeriesShow() : this.props.toggleMovieShow()
+      if(show.watchableType === "series"){
+        this.props.fetchSeriesEpisodes(show.id);
+        this.props.toggleSeriesShow()
+      } else {
+        this.props.toggleMovieShow()
+      }
     }
   }
 
@@ -21,7 +26,7 @@ export default class FeaturedExpander extends React.Component {
           <div className="gradient"
                style={{ backgroundImage: `linear-gradient(to bottom, transparent, ${this.props.items[0].shellColor} 99%)` }}></div>
           <div className="img-container large">
-            {/*<img src={this.props.items[0].thumbnail} alt=""/>*/}
+            <img src={this.props.items[0].thumbnail} alt=""/>
           </div>
           <div className="title-container">
             <h1>{this.props.items[0].title}</h1>
@@ -32,7 +37,7 @@ export default class FeaturedExpander extends React.Component {
           <div className="gradient"
                style={{ backgroundImage: `linear-gradient(to bottom, transparent, ${this.props.items[1].shellColor} 99%)` }}></div>
           <div className="img-container large">
-            {/*<img src={this.props.items[1].thumbnail} alt=""/>*/}
+            <img src={this.props.items[1].thumbnail} alt=""/>
           </div>
           <div className="title-container">
             <h1>{this.props.items[1].title}</h1>

@@ -3,18 +3,20 @@
   z-index: 1100;
   top: 0;
   font-family: Poppins, sans-serif;
-  box-sizing: border-box;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 3vw 0;
 }
 
 .show {
-  width: 100%;
-  box-sizing: border-box;
-  overflow-y:scroll;
+  position: absolute;
+  width: 90%;
 }
 
 .show .top-section {
@@ -45,8 +47,8 @@
 
 .top-section .main .img-container {
   position: relative;
-  height: 20vh;
-  width: 14vh;
+  height: 40vh;
+  width: 30vh;
   display: inline-block;
   margin-right: 5%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -58,12 +60,12 @@
 }
 
 .top-section h1 {
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 200;
 }
 
 .top-section h3 {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 200;
 }
 
@@ -71,6 +73,25 @@
   color: white;
 }
 
+.top-section .text-container .description {
+  width: 100%
+}
+
 .top-section .gradient {
   opacity: 1;
+}
+
+.bottom-section .nav {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 60px;
+  background-color: white;
+}
+
+.content-container {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  padding: 2vw 5vw;
 }
