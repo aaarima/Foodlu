@@ -34,7 +34,12 @@ export default class Home extends React.Component{
     return e => {
       this.props.updateCurrentShow(show);
       this.props.toggleModal();
-      show.watchableType === "series" ? this.props.toggleSeriesShow() : this.props.toggleMovieShow();
+      if(show.watchableType === "series") {
+        this.props.fetchSeriesEpisodes(show.id);
+        this.props.toggleSeriesShow()
+      } else {
+        this.props.toggleMovieShow();
+      }
     }
   }
 

@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { fetchGenres } from '../../actions/genre_actions'
 import { fetchMovies } from '../../actions/movie_actions'
 import { fetchSeries } from '../../actions/series_actions'
-import { fetchEpisodes } from "../../actions/episode_actions";
+import { fetchEpisodes, fetchSeriesEpisodes } from "../../actions/episode_actions";
 import { updateCurrentShow, toggleSeriesShow, toggleMovieShow, toggleModal } from "../../actions/ui_actions";
 import Home from "./home";
 
@@ -17,6 +17,7 @@ const mDTP = dispatch => ({
   fetchMovies: () => dispatch(fetchMovies()),
   fetchSeries: () => dispatch(fetchSeries()),
   fetchEpisodes: () => dispatch(fetchEpisodes()),
+  fetchSeriesEpisodes: seriesId => dispatch(fetchSeriesEpisodes(seriesId)),
   updateCurrentShow: show => dispatch(updateCurrentShow(show)),
   toggleSeriesShow:  () => dispatch(toggleSeriesShow()),
   toggleMovieShow: () => dispatch(toggleMovieShow()),
