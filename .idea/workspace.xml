@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6706d020-a9d6-43fb-8ff5-8aed9fa6142e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/bundle.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/static_pages.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/home/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/home/home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/home/home_container.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/home/home_container.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +184,7 @@
       <updated>1568266617184</updated>
       <workItem from="1568266624017" duration="26645000" />
       <workItem from="1568328670689" duration="107832000" />
-      <workItem from="1568832626477" duration="23968000" />
+      <workItem from="1568832626477" duration="24849000" />
     </task>
     <servers />
   </component>
