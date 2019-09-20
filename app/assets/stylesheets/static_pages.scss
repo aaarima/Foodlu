@@ -96,9 +96,8 @@ input[type="submit"] {
 }
 
 .form-container {
-  position: absolute;
+  position: relative;
   text-align: center;
-  top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,7 +110,7 @@ input[type="submit"] {
   font-family: 'Poppins', sans-serif;
   font-size: 2.5rem;
   font-weight: bolder;
-  padding: 30px 0;
+  padding-bottom: 30px;
 }
 
 .form-container label {
@@ -153,10 +152,10 @@ form {
 
 .background {
   background-color: #EFEFEF;
-  position: absolute;
-  height: 1000px;
+  position: relative;
   width: 100%;
   display: block;
+  padding: 5vh 0 8vh 0;
 }
 
 .button {
@@ -180,7 +179,7 @@ form {
 }
 
 .footer {
-  position: relative;
+  position: sticky;
   text-align: center;
   white-space: pre-line;
   padding: 20px;
@@ -188,6 +187,7 @@ form {
   border-top: 4px solid grey;
   font-family: Poppins, sans-serif;
   font-weight: 300;
+  bottom: 0;
 }
 
 .img-container {

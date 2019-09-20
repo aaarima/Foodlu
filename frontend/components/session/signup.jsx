@@ -154,7 +154,7 @@ export default class SignUp extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="Signup Container">
         <div className="bar">
           <div className="left">
             <div className="item">

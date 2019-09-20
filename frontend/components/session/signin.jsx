@@ -105,7 +105,7 @@ export default class SignIn extends React.Component {
 
   render() {
     return (
-      <div className="form-container" onClick={this.props.toggleModal}>
+      <div className={this.props.active ? "form-container" : "hidden"} onClick={this.props.toggleModal}>
         <form className={this.props.active ? "sign-in" : "hidden"} onClick={e => e.stopPropagation()}>
           <div className="close-container">
             <h3 className="h3">Log in to foodlu</h3>

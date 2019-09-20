@@ -1,8 +1,17 @@
+.welcome .form-container{
+  position: absolute;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20vh 0;
+}
+
 .welcome-image-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 600px;
+  height: 90vh;
   position: relative;
   overflow: hidden;
 }
@@ -10,7 +19,7 @@
 .welcome-image-container h1{
   font-family: Poppins, sans-serif;
   position: absolute;
-  font-size: 50px;
+  font-size: 8vh;
   z-index: 4;
   color: white;
   top: 40%;
